@@ -17,6 +17,8 @@ let res = data.filter(ob => ob.datetime === dateValue)
 //res.forEach(element => console.log(element));
 
 let uniqueDates = d3.map(data, function(d){return d.datetime;}).keys()
+
+console.log(uniqueDates)
 //uniqueDates.forEach(element => console.log(element));
 
 let uniqueCities = d3.map(data, function(d){return d.city;}).keys()
@@ -235,6 +237,12 @@ function updateShape(selected) {
 var button = d3.select("#reset");
 
 button.on("click", function() {
+
+    var elements = document.getElementsByTagName('select');
+    for (var i = 0; i < elements.length; i++)
+    {
+        elements[i].selectedIndex = 0;
+    }
    // console.log("Hi, a button was clicked!");
    // console.log(d3.event.target);
     tbody.selectAll("tr").remove()
