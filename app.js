@@ -14,22 +14,22 @@ data.forEach((sighting) => {
 
 dateValue = "1/9/2020"
 let res = data.filter(ob => ob.datetime === dateValue)
-res.forEach(element => console.log(element));
+//res.forEach(element => console.log(element));
 
 let uniqueDates = d3.map(data, function(d){return d.datetime;}).keys()
-uniqueDates.forEach(element => console.log(element));
+//uniqueDates.forEach(element => console.log(element));
 
 let uniqueCities = d3.map(data, function(d){return d.city;}).keys()
-uniqueCities.forEach(element => console.log(element));
+//uniqueCities.forEach(element => console.log(element));
 
 let uniqueStates = d3.map(data, function(d){return d.state;}).keys()
-uniqueCities.forEach(element => console.log(element));
+//uniqueCities.forEach(element => console.log(element));
 
 let uniqueCountries = d3.map(data, function(d){return d.country;}).keys()
-uniqueCities.forEach(element => console.log(element));
+//uniqueCities.forEach(element => console.log(element));
 
 let uniqueShapes = d3.map(data, function(d){return d.shape;}).keys()
-uniqueCities.forEach(element => console.log(element));
+//uniqueCities.forEach(element => console.log(element));
 
 d3.select("#selectButton")
     .selectAll('myOptions')
@@ -77,7 +77,7 @@ function update(selected) {
 
     // Create new data with the selection?
     // var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
-    console.log(selected)
+  //  console.log(selected)
     var dataFilter = currentTable.filter(ob => ob.datetime === selected)
     tbody.selectAll("tr").remove()
     //tbody.selectAll("table").remove()
@@ -101,7 +101,7 @@ function updateCity(selected) {
 
     // Create new data with the selection?
     // var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
-    console.log(selected)
+  //  console.log(selected)
     var dataFilter = currentTable.filter(ob => ob.city === selected)
     tbody.selectAll("tr").remove()
     //tbody.selectAll("table").remove()
@@ -123,7 +123,7 @@ function updateState(selected) {
 
     // Create new data with the selection?
     // var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
-    console.log(selected)
+   // console.log(selected)
     var dataFilter = currentTable.filter(ob => ob.state === selected)
     tbody.selectAll("tr").remove()
     //tbody.selectAll("table").remove()
@@ -146,7 +146,7 @@ function updateCountry(selected) {
 
     // Create new data with the selection?
     // var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
-    console.log(selected)
+  //  console.log(selected)
     var dataFilter = currentTable.filter(ob => ob.country === selected)
     tbody.selectAll("tr").remove()
     //tbody.selectAll("table").remove()
@@ -169,7 +169,7 @@ function updateShape(selected) {
 
     // Create new data with the selection?
     // var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
-    console.log(selected)
+  //  console.log(selected)
     var dataFilter = currentTable.filter(ob => ob.shape === selected)
     tbody.selectAll("tr").remove()
     //tbody.selectAll("table").remove()
@@ -195,7 +195,7 @@ function updateShape(selected) {
         // recover the option that has been chosen
         var selectedOption = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        console.log(selectedOption)
+     //   console.log(selectedOption)
         update(selectedOption)
     })
 
@@ -203,7 +203,7 @@ function updateShape(selected) {
     // recover the option that has been chosen
     var selectedOption = d3.select(this).property("value")
     // run the updateChart function with this selected option
-    console.log(selectedOption)
+   // console.log(selectedOption)
     updateCity(selectedOption)
 })
 
@@ -211,7 +211,7 @@ function updateShape(selected) {
         // recover the option that has been chosen
         var selectedOption = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        console.log(selectedOption)
+      //  console.log(selectedOption)
         updateState(selectedOption)
     })
 
@@ -219,7 +219,7 @@ function updateShape(selected) {
         // recover the option that has been chosen
         var selectedOption = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        console.log(selectedOption)
+       // console.log(selectedOption)
         updateCountry(selectedOption)
     })
 
@@ -227,7 +227,7 @@ function updateShape(selected) {
         // recover the option that has been chosen
         var selectedOption = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        console.log(selectedOption)
+       // console.log(selectedOption)
         updateShape(selectedOption)
     })
 
@@ -235,8 +235,8 @@ function updateShape(selected) {
 var button = d3.select("#reset");
 
 button.on("click", function() {
-    console.log("Hi, a button was clicked!");
-    console.log(d3.event.target);
+   // console.log("Hi, a button was clicked!");
+   // console.log(d3.event.target);
     tbody.selectAll("tr").remove()
     data.forEach((sighting) => {
         var row = tbody.append("tr");
